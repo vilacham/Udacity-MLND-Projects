@@ -11896,7 +11896,18 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> In agent.py, num_dummies flag is a discrete number of dummy agents, or cars, in the environment (with 100 as the default value) that affects both security (as more cars exist in the environment, the chance of having an accident becomes higher) and reliability (as more cars exist in the environment, the agent will need more time to reach its destination) of our agent; alpha is a continuous value for the learning rate (with default value of .5) that determines how our agent will deal with recent learned information (if alpha is 0, the agent will not learn anything from the new information, and if alpha is 1, the agent will consider only the new information); update_delay is a continuous value that measures time in seconds between actions (with 2.0 as default value) and affects how long it will take to execute all the tests (a small value will make the test be executed in a short period, and a large value will make the test be executed slower). In environment.py, the class function act() is called when an agent performs an action (accordingly to the docstring: "Consider an action and perform the action if it is legal. Receive a reward for the agent based on traffic laws"). In simulator.py, both render_text() and render() functions are render displays of the simulation; the difference between them is that the first is the non-GUI render display of the simulation (simulated data trial is rendered in the terminal/command prompt) and the second is the GUI render display of the information. I planner.py, next_waypoint() function considers the East-West direction first.</p>
+<p><strong>Answer:</strong> In agent.py:</p>
+<ul>
+<li><p>num_dummies flag is a discrete number of dummy agents, or cars, in the environment (with 100 as the default value) that affects both security (as more cars exist in the environment, the chance of having an accident becomes higher) and reliability (as more cars exist in the environment, the agent will need more time to reach its destination) of our agent;</p>
+</li>
+<li><p>alpha is a continuous value for the learning rate (with default value of .5) that determines how our agent will deal with recent learned information (if alpha is 0, the agent will not learn anything from the new information, and if alpha is 1, the agent will consider only the new information);</p>
+</li>
+<li><p>update_delay is a continuous value that measures time in seconds between actions (with 2.0 as default value) and affects how long it will take to execute all the tests (a small value will make the test be executed in a short period, and a large value will make the test be executed slower).</p>
+</li>
+</ul>
+<p>In environment.py, the class function act() is called when an agent performs an action (accordingly to the docstring: "Consider an action and perform the action if it is legal. Receive a reward for the agent based on traffic laws").</p>
+<p>In simulator.py, both render_text() and render() functions are render displays of the simulation; the difference between them is that the first is the non-GUI render display of the simulation (simulated data trial is rendered in the terminal/command prompt) and the second is the GUI render display of the information.</p>
+<p>In planner.py, next_waypoint() function considers the East-West direction first.</p>
 
 </div>
 </div>
@@ -13589,7 +13600,10 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> From the top-left panel, it is possible to notice that the agent makes bad decisions about 40% of the time, and that accidents occur about 10% of the time (around 6% are major accident and 4% are minor accidents); that said, approximately 25% of the bad decisions result in accidents. From the top-right panel, it is possible to state that the agent is receiveing negative rewards, which indicates it is being heavily penalized for the bad decisions. The bottom-left panel shows us that the agent's reliability is about 10% (for me, it is reasonable, since the agent drives randomly). From the bottom-right panel, I feel confortable saying that the agent is not safe (F rating, because of the high frequency of bad decisions, violations and accidents) neither reliable (F rating because it probably doesn't reach its destination on time). From these panels, it is possible to state that, as the number of trials increases, the outcome of results does not change at all: bad actions' frequency continues about 40% and reward keeps negative.</p>
+<p><strong>Answer:</strong> From the top-left panel, it is possible to notice that the agent makes bad decisions about 40% of the time, and that accidents occur about 10% of the time (around 6% are major accident and 4% are minor accidents); that said, approximately 25% of the bad decisions result in accidents.</p>
+<p>From the top-right panel, it is possible to state that the agent is receiveing negative rewards, which indicates it is being heavily penalized for the bad decisions.</p>
+<p>The bottom-left panel shows us that the agent's reliability is about 10% (for me, it is reasonable, since the agent drives randomly).</p>
+<p>From the bottom-right panel, I feel confortable saying that the agent is not safe (F rating, because of the high frequency of bad decisions, violations and accidents) neither reliable (F rating because it probably doesn't reach its destination on time). From these panels, it is possible to state that, as the number of trials increases, the outcome of results does not change at all: bad actions' frequency continues about 40% and reward keeps negative.</p>
 
 </div>
 </div>
@@ -15654,7 +15668,12 @@ JEmSamEwJUmSJEmSpFr8D6JS8HHx71T0AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> From the top-left panel, it si possible to observe that, as time goes on, the agent makes less bad actions, commit less violations and is involved in less accidents. From the top-right panel, we can state that the agent is receiveing growing yet negative rewards, which indicates it is improving its decisions. From the bottom-left panel, we can say that agent's reliability improves as time goes on (since the agent is now learning from past actions, it is expected that it improves the reliability). From the bottom-right panel, we can notice that the smartcab is still not safe (F rating), but is now reliable (it was F rating, now it is A). The agent performed 20 training trials before testing, which makes sense since epsilon decreased 5% in each testing trial. As we can see in the middle-right panel, the exploration factor (that is, epsilon) is a straight decreasing line (with slope of -.05) and the learning factor (that is, alpha) is constant at .5.  From these panels, it is possible to state that, as the number of trials increases, the outcome of results does not change at all: bad actions' frequency continues about 40% and reward keeps negative.</p>
+<p><strong>Answer:</strong> From the top-left panel, it si possible to observe that, as time goes on, the agent makes less bad actions, commit less violations and is involved in less accidents.</p>
+<p>From the top-right panel, we can state that the agent is receiveing growing yet negative rewards, which indicates it is improving its decisions.</p>
+<p>From the bottom-left panel, we can say that agent's reliability improves as time goes on (since the agent is now learning from past actions, it is expected that it improves the reliability).</p>
+<p>From the bottom-right panel, we can notice that the smartcab is still not safe (F rating), but is now reliable (it was F rating, now it is A).</p>
+<p>The agent performed 20 training trials before testing, which makes sense since epsilon decreased 5% in each testing trial.</p>
+<p>As we can see in the middle-right panel, the exploration factor (that is, epsilon) is a straight decreasing line (with slope of -.05) and the learning factor (that is, alpha) is constant at .5.</p>
 
 </div>
 </div>
@@ -18805,7 +18824,11 @@ fA1KcBVpAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> I used epsilon = cos(alpha x trials) function for the exploration factor. The agent needed approximately 300 training trials before begining testing. I used the default epsilon-tolerance of 0.05 (after trying many optimizations, I decided to use the default value for this parameter) and an alpha of .005 (I noticed than, as time goes on, Q-table becomes accurate and stable, indicating that new learning is not that relevant; that's why I decreased alpha value so much). As we can see in the panels above, this optimization reduces to about 1% the frequency of violations and accidents, and to about 3% the frequency of bad actions. It is also possible to notice that now the agent has A+ rating for safety (it was F) and keeps A rating for reliability. For me, these results show that the agent successfully learned an appropriate policy. I am really satisfied with the results.</p>
+<p><strong>Answer:</strong> I used epsilon = cos(alpha x trials) function for the exploration factor.</p>
+<p>The agent needed approximately 300 training trials before begining testing.</p>
+<p>I used the default epsilon-tolerance of 0.05 (after trying many optimizations, I decided to use the default value for this parameter) and an alpha of .005 (I noticed than, as time goes on, Q-table becomes accurate and stable, indicating that new learning is not that relevant; that's why I decreased alpha value so much).</p>
+<p>As we can see in the panels above, this optimization reduces to about 1% the frequency of violations and accidents, and to about 3% the frequency of bad actions. It is also possible to notice that now the agent has A+ rating for safety (it was F) and keeps A rating for reliability.</p>
+<p>For me, these results show that the agent successfully learned an appropriate policy. I am really satisfied with the results.</p>
 
 </div>
 </div>
@@ -18838,7 +18861,7 @@ fA1KcBVpAAAAAElFTkSuQmCC
 <p><strong>Answer:</strong>  For me, the optimal policy would be the following (pseudocode):</p>
 <ul>
 <li>If 'waypoint' is 'right':<ul>
-<li>if inputs['oncoming'] is 'left':<ul>
+<li>if inputs['light'] is 'red' and inputs['left'] is 'forward':<ul>
 <li>wait</li>
 </ul>
 </li>
@@ -18849,12 +18872,12 @@ fA1KcBVpAAAAAElFTkSuQmCC
 </ul>
 </li>
 <li>If 'waypoint' is 'left':<ul>
-<li>if inputs['light'] is 'red':<ul>
-<li>wait</li>
+<li>if inputs['oncoming'] is 'left' or inputs['oncoming'] is None:<ul>
+<li>move left</li>
 </ul>
 </li>
-<li>if inputs['light'] is 'green' and (inputs['oncoming'] is 'right' or inputs['oncoming'] is 'forward' or inputs['oncoming'] is None):<ul>
-<li>move left</li>
+<li>else:<ul>
+<li>wait</li>
 </ul>
 </li>
 </ul>
@@ -18896,16 +18919,7 @@ fA1KcBVpAAAAAElFTkSuQmCC
 <p>-- right : 0.33</p>
 <p>-- None : 0.18</p>
 <p>-- left : -1.29</p>
-<p>Although the agent was correct in all actions taken in the three states above, it is important to know that there are certain cases in which it didn't do the expected:</p>
-<ul>
-<li>Example 4 (lines 527 to 531 in the sim_improved-learning.txt file): as we can see, waypoint is 'right', inputs['light'] is 'red', there is car on the left side moving forward and there is oncoming car moving right; the agent doesn't move (since there is no oncoming car moving left, the expected action would be move right).</li>
-</ul>
-<p>('right', 'red', 'forward', 'right')</p>
-<p>-- forward : -0.20</p>
-<p>-- right : -0.20</p>
-<p>-- None : 0.03</p>
-<p>-- left : -0.80</p>
-<p>That said, we can state that the agent is really safe, but may delay because it doesn't move right when it is possible (this makes sense, since the safety and relabiality ratings are, respectivelly, A+ and A).</p>
+<p>As I couldn't find any example of a sub-optimal policy, I feel confortable to say that all the learned policies are optimal.</p>
 
 </div>
 </div>
@@ -18936,7 +18950,7 @@ fA1KcBVpAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong> Answer:</strong> For the smartcab itself, I think that the main goal is to learn and act according to traffic rules and how to get to its destination; this learning depends only on the immediate rewards. For the environment, I'd say that the states in each step are independent ('waypoint' doesn't affect inputs['light'], for example); that said, I don't think there is any future advantage on being in a certain state.</p>
+<p><strong> Answer:</strong> For the smartcab itself, I think that the main goal is to learn and act according to traffic rules and how to get to its destination; this learning depends only on the immediate rewards. For the environment, I'd say that the states in each step are independent ('waypoint' doesn't affect inputs['light'], for example) and destination doesn't stay at the same location over the trials; that said, I don't think there is any future advantage on being in a certain state.</p>
 
 </div>
 </div>
